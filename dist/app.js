@@ -4,7 +4,7 @@ const helmet = require('helmet');
 
 const app = express();
 
-const port = 8200;
+const port = 8282;
 
 app.use(helmet.noSniff());
 
@@ -16,6 +16,6 @@ app.use(express.static(__dirname + '/Budget-app'));
 
 app.get('/*', (req, res) => res.sendFile(__dirname + '/Budget-app/index.html'));
 
-app.listen(() => {
+app.listen(port,() => {
     console.log(`Server listening on the port::${port}`);
 });
